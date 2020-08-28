@@ -1,0 +1,553 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+
+*, button:focus {
+  outline: none;
+}
+
+#navbar {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  transition: all 0.6s;
+}
+
+.navbar-brand {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+}
+
+.nav-link {
+  font-family: 'Poppins', sans-serif;
+  color: rgba(255, 255, 255, 0.7) !important;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  color: white !important;
+}
+
+.navbar-text {
+  font-size: 24px;
+}
+
+.button-to-top {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  color: white;
+  font-size: 50px;
+  z-index: 1;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  mix-blend-mode: difference;
+}
+
+#main {
+  height: 100vh;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#main:before {
+  content: '';
+  position: absolute;
+  background: rgba(0, 0, 0, 0.9);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+}
+
+.main-wrapper {
+  padding-top: 0vh;
+  height: 65vh;
+}
+
+.main-title {
+  font-family: 'Pacifico', sans-serif;
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.brand-name {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 5em;
+  text-align: center;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+.button-main {
+  padding: 15px 0;
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid whitesmoke;
+  border-radius: 100px;
+  width: 40%;
+  color: whitesmoke;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  transition: all 0.4s ease-in;
+  text-align: center;
+}
+
+.button-main:hover {
+  background-color: whitesmoke;
+  border: 2px solid whitesmoke;
+  color: black;
+  text-decoration: none;
+}
+
+#technologies {
+  background-color: aliceblue;
+  position: relative;
+  height: auto;
+  color: black;
+  padding-top: 8vh;
+  padding-bottom: 8vh;
+  background: url('../img/elysia-menu-index.png');
+}
+
+#technologies:before {
+  content: '';
+  position: absolute;
+  background: rgba(255, 255, 255, 0.8);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.technologies-title {
+  font-family: 'Poppins', sans-serif;
+  color: rgb(60, 60, 60);
+  font-weight: 600;
+  text-align: center;
+}
+
+.technologies-desc {
+  margin-bottom: 5vh;
+  color: rgb(40, 40, 40);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.technology-info {
+  background-color: ;
+  padding: 40px;
+}
+
+.technology-img {
+  width: 60px;
+  height: auto;
+  margin-right: 25px;
+  transition: all 0.3s;
+}
+
+.technology-img:hover {
+  transform: scale(1.2);
+}
+
+.technology-title {
+  font-family: 'Poppins', sans-serif;
+  color: rgb(60, 60, 60);
+  font-size: 20px;
+}
+
+.technology-desc {}
+
+.star-active {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  color: gold;
+}
+
+.star-notactive {
+  text-shadow: 1px 0px 3px rgba(0, 0, 0, 0.2);
+  color: dimgrey;
+}
+
+#projects {
+  background-color: rgb(30, 30, 30);
+  position: relative;
+  height: auto;
+  color: whitesmoke;
+  padding-top: 8vh;
+  padding-bottom: 8vh;
+  background-image: url(../img/projects-bg.jpg);
+  background-attachment: fixed;
+  background-position: center;
+}
+
+#projects:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.projects-title {
+  font-family: 'Poppins', sans-serif;
+  color: rgb(240, 240, 240);
+  font-weight: 600;
+  text-align: center;
+}
+
+.projects-desc {
+  margin-bottom: 5vh;
+  color: rgb(250, 250, 250);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.project-card {
+  background: rgb(20, 20, 20);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.55);
+  padding: 8px 40px;
+  padding-top: 18px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.project-date {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 14px;
+  transition: all 0.3 ease-in;
+}
+
+.project-date:hover {
+  color: rgba(255, 255, 255, 0.4);
+  cursor: default;
+}
+
+.project-title {
+  font-family: 'Poppins', sans-serif;
+  color: rgb(240, 240, 240);
+  font-weight: 400;
+  padding-top: 6px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.project-desc {
+  font-family: 'Poppins', sans-serif;
+  color: rgb(230, 230, 230);
+  font-weight: 300;
+}
+
+.project-hr {
+  border: none;
+  outline: none;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.project-img {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-position: top;
+  background-size: cover;
+  transition: background-position 8s ease-in-out;
+}
+
+.project-img:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  transition: all 0.2s;
+}
+
+.project-img:hover:before {
+  background-color: transparent;
+}
+
+.project-img:hover {
+  background-position: bottom;
+}
+
+.project-elektromedia {
+  background-image: url(../img/elektromedia-fullwebiste-ss.png);
+}
+
+.project-undone {
+  background-image: url(../img/work-in-progress.png);
+}
+
+.project-todolist {
+  background-position: center;
+  background-image: url(../img/todolist-static.png);
+}
+
+.project-todolist:hover {
+  background-image: url(../img/todolist.gif);
+}
+
+.project-technologies-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.3);
+  font-variant: small-caps;
+  font-weight: 600;
+  margin-top: -16px;
+}
+
+.project-technologies {
+  display: flex;
+}
+
+.project-technology-img {
+  width: 25px;
+  height: auto;
+  filter: grayscale(100);
+  margin: 5px 5px;
+  transition: all 0.1s;
+}
+
+.project-technology-img:first-of-type {
+  margin-left: 0;
+}
+
+.project-technology-img:hover {
+  filter: grayscale(0);
+}
+
+.project-button-deck {
+  width: 100%;
+  height: auto;
+  margin-top: 15px;
+  padding-bottom: 15px;
+}
+
+.project-button {
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  width: 49%;
+  padding: 8px 0;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease-in;
+}
+
+.project-button:hover {
+  border: 2px solid rgba(255, 255, 255, 1);
+  background-color: white;
+  color: black;
+}
+
+#contact {
+  background-color: rgb(25, 25, 25);
+  position: relative;
+  height: auto;
+  color: black;
+  padding-top: 6vh;
+  padding-bottom: 6vh;
+  height: auto;
+}
+
+.application-status {
+  background-color: transparent;
+  width: 100%;
+  padding: 12px 0;
+  text-align: center;
+  color: whitesmoke;
+  border-radius: 100px;
+  font-size: 18px;
+}
+
+.on {
+  border: 2px solid #b8e994;
+  color: #b8e994;
+  box-shadow: 0 0 0 0 rgba(90, 153, 212, 0.5);
+  -webkit-animation: pulse 1.5s infinite;
+}
+
+.off {
+  border: 2px solid #b71540;
+  color: #b71540;
+}
+
+@keyframes pulse {
+  0% {}
+
+  70% {
+    box-shadow: 0 0 0 15px rgba(90, 153, 212, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
+  }
+}
+
+.contact-icons a {
+  font-size: 40px;
+  color: whitesmoke;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-icons a:hover {
+  transform: scale(1.1);
+}
+
+.contact-email-button {
+  background-color: transparent;
+  width: 100%;
+  padding: 12px 0;
+  border: 2px solid whitesmoke;
+  color: whitesmoke;
+  border-radius: 100px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  transition: all 0.3s ease-in;
+}
+
+.contact-email-button:hover {
+  background-color: whitesmoke;
+  color: #202020;
+}
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+
+  .brand-name {
+    font-size: 2.6em;
+  }
+
+  .main-title {
+    font-size: 1.6em;
+  }
+
+  .technologies-title {
+    font-size: 1.5em;
+  }
+
+  .technologies-desc {
+    font-size: 1.2em;
+  }
+
+  .projects-desc {
+    font-size: 1em;
+  }
+
+  .project-title {
+    font-size: 1.2em;
+  }
+
+  .project-desc {
+    font-size: 0.8em;
+  }
+
+  .project-img {
+    height: 200px;
+  }
+
+  .project-button {
+    font-size: 0.8em;
+  }
+
+  .technology-info {
+    padding: 20px;
+  }
+
+  .technology-img {
+    width: 50px;
+  }
+
+  .technology-title {
+    font-size: 16px;
+  }
+
+  .button-main {
+    padding: 10px 15px;
+    width: 80%;
+  }
+
+  .application-status,
+  .contact-email-button,
+  .contact-icons {
+    margin-bottom: 35px;
+    width: 75%;
+  }
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+  .brand-name {
+    font-size: 3.5em;
+  }
+
+  .application-status,
+  .contact-icons {
+    margin-bottom: 35px;
+    width: 75%;
+  }
+
+  .contact-email-button {
+    width: 75%;
+  }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+  .project-technologies-title {
+    font-size: 20px;
+  }
+
+  .project-technology-img {
+    width: 33px;
+  }
+
+  .project-date {
+    color: rgba(255, 255, 255, 0.4)
+  }
+
+  .application-status,
+  .contact-icons {
+    margin-bottom: 35px;
+    width: 75%;
+  }
+
+  .contact-email-button {
+    width: 75%;
+  }
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) {}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+  ...
+}
