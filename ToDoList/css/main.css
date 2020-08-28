@@ -1,0 +1,400 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+
+*,
+button:focus {
+  outline: none;
+}
+
+#main {
+  position: relative;
+  background: url(../img/projects-bg.jpg);
+  background-attachment: fixed;
+  min-height: 100vh;
+  width: 100%;
+}
+
+#main:before {
+  position: absolute;
+  content: '';
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.85);
+}
+
+.main-title {
+  color: rgba(255,255,255,0.9);
+  font-family: 'Poppins', sans-serif;
+  padding: 5vh 0;
+  text-align: center;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.6);
+  z-index: 1;
+}
+
+.card-deck {
+  color: black;
+}
+
+.card {
+  background-color: aliceblue;
+  width: 100%;
+  padding: 10px 10px;
+  position: relative;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
+  margin-bottom: 25px !important;
+  order: 2
+}
+
+.finished {
+  filter: contrast(60%);
+  transition: all 0.2s ease-in-out;
+}
+
+.finished:hover {
+  filter: none;
+}
+
+.card-close {
+  content: '';
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border: none;
+  background-color: transparent;
+  font-size: 22px;
+}
+
+.card-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 1.4em;
+  color: #606060;
+}
+
+.card-desc {
+  padding-bottom: 2.5vh;
+  font-family: 'Poppins', sans-serif;
+  color: #202020;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-icon {
+  outline: none;
+  border: none;
+  width: 30px;
+  height: 30px;
+  color: white;
+  line-height: 30px;
+  border-radius: 50%;
+  transition: all 0.3s ease-in;
+}
+
+.card-icon:hover {
+  filter: brightness(100%);
+}
+
+.undone {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.undone:after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 9px;
+  width: 18px;
+  height: 18px;
+  background-image: url(../img/times-solid.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: invert(100%);
+}
+
+.done {
+  background-color: forestgreen;
+  position: relative;
+}
+
+.done:after {
+  content: '';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background-image: url(../img/check-solid.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: invert(100%);
+}
+
+.card-date {
+  font-family: 'Roboto', sans-serif;
+  color: rgba(0, 0, 0, 0.3);
+  align-self: flex-end;
+}
+
+.finished .card-date {
+  font-family: 'Roboto', sans-serif;
+  color: rgba(0, 0, 0, 0.5);
+  align-self: flex-end;
+}
+
+.add-card {
+  font-size: 46px;
+  color: rgba(255, 255, 255, 0.7);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in;
+  background-color: rgba(255, 255, 255, 0.0);
+  width: 100%;
+  padding: 50px 0;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.add-card:hover {
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+}
+
+.add-card:hover::before {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.add-card:before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  min-height: 100px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transition: all 0.3s ease-in;
+}
+
+/*CREATE NEW CARD WINDOW*/
+
+#create-card {
+  position: fixed;
+  display: none;
+  top: 0px;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0,0,0,0.3);
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+}
+
+.note-create {
+  position: relative;
+  background-color: #252525;
+  padding: 20px 40px;
+  border-radius: 20px;
+  width: 60%;
+  margin-top: 20px;
+  box-shadow: 0px 2px 12px rgba(0,0,0,0.6);
+}
+
+.create-close {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  font-size: 33px;
+  transition: all 0.3s ease-in;
+  color: rgba(255,255,255,0.8);
+}
+
+.create-close:hover {
+  cursor: pointer;
+  color: rgba(255,255,255,1);
+
+}
+
+.create-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5em;
+}
+
+.create-desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.create-form {
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+}
+
+.create-label {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.create-input {
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 4px 8px;
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 20px;
+  width: 50%;
+}
+
+.create-textarea {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 5px 8px;
+  color: rgba(0, 0, 0, 0.6);
+  height: 30px;
+  width: 320px;
+  min-height: 30px;
+  max-height: 200px;
+  max-width: 400px;
+  min-width: 300px;
+  resize: both;
+}
+
+.create-date {
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 4px 8px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.create-button {
+  margin-top: 25px;
+  border: 1px solid rgba(0,0,0,0.2);
+  outline: none;
+  transition: all 0.3s;
+  background-color: #fffffa;
+  color: black;
+  padding: 8px 16px;
+  width: 35%;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  box-shadow: 0px 1px 8px rgba(0,0,0,0.6);
+}
+
+.create-button:hover {
+  background-color: transparent;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.6);
+}
+
+/*MEDIA QUERIES*/
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+
+  .note-create {
+    width: 100vw;
+    height: 100vh !important;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .create-form {
+    justify-content: flex-start;
+  }
+
+  .create-title {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 1.3em;
+  }
+
+  .create-desc {
+    text-align: center;
+    font-size: 1em;
+  }
+
+  .create-input {
+    width: 100%;
+    height: 40px;
+    font-size: 1.3em;
+  }
+
+  .create-textarea {
+    width: 100%;
+    height: 30%;
+    max-width: 100%;
+  }
+
+  .create-button {
+    margin-top: 25%;
+    margin-left: auto;
+  }
+
+}
+
+/*Small devices (landscape phones, less than 768px)*/
+@media (max-width: 767.98px) {
+
+    .note-create {
+    width: 100vw;
+    height: 80vh;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .create-form {
+    justify-content: flex-start;
+  }
+
+  .create-title {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 1.3em;
+  }
+
+  .create-desc {
+    text-align: center;
+    font-size: 1em;
+  }
+
+  .create-input {
+    width: 100%;
+    height: 40px;
+    font-size: 1.3em;
+  }
+
+  .create-textarea {
+    width: 100%;
+    height: 30%;
+    max-width: 100%;
+  }
+
+  .create-button {
+    margin-left: auto;
+  }
+
+}
+
+/*Medium devices (tablets, less than 992px)*/
+@media (max-width: 991.98px) {
+
+  .note-create {
+    width: 100%;
+  }
+
+}
+
+/*Large devices (desktops, less than 1200px)*/
+@media (max-width: 1199.98px) {
+
+}
