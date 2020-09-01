@@ -364,6 +364,18 @@ a:hover {
   color: black;
 }
 
+.project-button:disabled {
+  background-color: rgba(0,0,0,0.4);
+    color: rgba(255, 255, 255, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.project-button:disabled:hover {
+  cursor: default;
+  color: rgba(255, 255, 255, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
 #contact {
   background-color: rgb(25, 25, 25);
   position: relative;
