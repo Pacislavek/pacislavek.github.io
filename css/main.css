@@ -3,6 +3,11 @@ body {
   color: white;
 }
 
+.noscroll {
+  overflow-y: hidden;
+  height: 100%;
+}
+
 *, button:focus {
   outline: none;
 }
