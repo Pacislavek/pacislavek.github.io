@@ -23,18 +23,135 @@
   <link rel="stylesheet" href="css/load.css" />
 
 </head>
+
 <body style="background-color: #252525;">
 
-  <div class="container">
-    <div class="row pt-5">
-      <h1 class="h1 w-100"><code>Remmos_app</code></h1>
+  <div class="container py-5">
+    <div class="row">
+      <h1 class="h1 w-100"><code class="mr-2">Remmos_app</code>
+        <img src="../img/php-logo.svg" alt="" class="project-technology-img">
+      </h1>
       <h4 class="h5 w-75">Aplikacja Remmos została stworzona z myślą o ludziach pracujących na hali produkcyjnej. Ma ona za zadanie ułatwić pracę zarówno pracownikom, jak i osobom wypełniającym faktury, lub różne inne dokumenty związane z produkcją.</h4>
       <h4 class="h5 w-75 text-muted">Aplikacja została wymyślona przez mojego pracodawcę, właściciela firmy Remmos.</h4>
       <h4 class="h4 w-75 mt-4">Założenia aplikacji:</h4>
       <p class="p">Aplikacja musi być bardzo prosta w użytku oraz jest przeznaczona na tablet.<br>Użytkownicy nie tworzą kont, tylko dostają przydzielone z góry loginy i hasła.<br>Aplikacja po wprowadzeniu danych od razu ma wywoływać wydruk.<br>Panel administratora, gdzie będzie można zobaczyć kto kiedy co i gdzie.</p>
       <h4 class="h4 w-75 mt-4">Znane błędy:</h4>
-      <p class="p">Najdłuższą ilość czasu zajęło mi przygotowanie druku po wprowadzeniu danych. Do drukowania dwóch kopii tabel zawierających dane wykorzystałem bibliotekę jQuery <a href="https://github.com/jasonday/printThis">printThis</a>, która choć trochę ułatwiła mi pracę. Stylowanie wydruku musiałem umieszczać w atrybucie <code>&lt;style&gt;</code> co i tak wychodziło całkiem słabo. Z powodów końcowego wydruku tabeli, który niezadowalał mojego pracodawcy, prace nad poprawą wydruku zostały zaniechane. A aplikacja pozostała w niezmienionej formie, tak jak ją ukończyłem. </p>
+      <p class="p">Najdłuższą ilość czasu zajęło mi przygotowanie druku po wprowadzeniu danych. Do drukowania dwóch kopii tabel zawierających dane wykorzystałem bibliotekę jQuery <a href="https://github.com/jasonday/printThis">printThis</a>, która choć trochę ułatwiła mi pracę. Stylowanie wydruku musiałem umieszczać w atrybucie <code>&lt;style&gt;</code> co i tak wychodziło całkiem słabo. Z powodów końcowego wydruku tabeli z danymi, który niezadowalał mojego pracodawcy - prace nad poprawą wydruku jak i dalszymi wdrożeniami do aplikacji zostały zaniechane a aplikacja pozostała w niezmienionej formie, tak jak ją ukończyłem. <a href="print.html">Podgląd wydruku.</a></p>
     </div>
+
+    <div class="row">
+      <h3 class="h3 w-75 mt-4">Przebieg działania aplikacji:</h3>
+
+      <div class="col-lg-6">
+        <img src="img/login.gif" alt="" class="img-fluid">
+      </div>
+      <div class="col-lg-6">
+        <h4 class="h4 w-75 mt-2">Logowanie</h4>
+        <p class="p">Logowanie miało mieć prostą i zrozumiałą dla każdego formę. Twoje imie znajduje się na liście? Wybierz je. Pamiętasz hasło? Wpisz je. Żadnej filozofii.</p>
+        <p class="p">Istniał podział na role, użytkownik i administrator. Administrator po zalogowaniu miał dostęp do panelu administracyjnego.</p>
+      </div>
+    </div>
+    <div class="row mt-4">
+
+      <div class="col-lg-6">
+        <img src="img/app.gif" alt="" class="img-fluid">
+      </div>
+      <div class="col-lg-6">
+        <h4 class="h4 w-75 mt-2">Działanie aplikacji</h4>
+        <p class="p">Aplikacja, podobnie jak logowanie, również była bardzo prosta w obsłudze. Wybierz maszynę na której pracujesz, wybierz czy jest to wejście czy wyjście wprowadź niezbędne dane.</p>
+        <p class="p">Z <b>numerem dostawy</b> to trochę dłuższa historia. Aplikacja do pełnego funkcjonowania wymaga kogoś kto będzie na bieżąco z tym co dzieje się na hali produkcyjnej. Wie jakie są dostawy i dla jakich klientów, jedynie kontrolnie zerka czy wszystko się zgadza.</p>
+        <p class="p">Po wprowadzeniu danych wyskakuje okno wydruku wprowadzonych danych (<a href="print.html">podgląd wydruku</a>) i następuje automatyczne wylogowanie.</p>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <h3 class="h3 w-100">Panel administracyjny</h3>
+      <h4 class="h4 w-100">Zarządzaj użytkownikami</h4>
+      <div class="col-lg-12">
+        <img src="img/panel_administracyjny.png" alt="" class="img-fluid">
+      </div>
+      <div class="col-lg-6 mt-4">
+        <h4 class="h4 w-75">Pierwsze spotkanie z panelem</h4>
+        <p class="p">Panel administracyjny nie ma już przeznaczonego interfejsu na tablet/telefon ale mimo to wciąż jest responsywny na tyle by prawidłowo się wyświetlać od telefonu do komputera.</p>
+        <p class="p">Panel został zbudowany z myślą o trzech kategoriach: użytkownicy, dostawy i raporty. Każdy z działów ma swoje funkcje a menu jest bardzo proste i intuicyjne.</p>
+      </div>
+      <div class="col-lg-6 mt-4">
+        <h4 class="h4 w-75">Zarządzanie użytkownikami</h4>
+        <p class="p">Tworzenie kont użytkowników, bo to jest ważny element każdej aplikacji. W tej, można to robić za pomocą prostego formularza pod menu. Permisje działają w systemie zero-jedynkowym czyli <br>0 - nie mam praw,<br>1 - mam wszystkie prawa.</p>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <h4 class="h4 w-100">Zarządzaj Dostawami</h4>
+      <div class="col-lg-12">
+        <img src="img/panel_administracyjny_zd.png" alt="" class="img-fluid">
+      </div>
+      <div class="col-lg-6 mt-4">
+        <img src="img/nr_dostawy.gif" alt="" class="img-fluid">
+      </div>
+      <div class="col-lg-6 mt-4">
+        <h4 class="h4 w-75">Dodawanie numerów dostawy</h4>
+        <p class="p">Utworzony przeze mnie numer dostawy z prezentacji po lewej stronie to <b>MI20/43/3</b> oznacza on dokładnie to samo co wprowadziłem. Poza usługą/sprzedażą i rodzajem tworzywa, które dopiero są umieszczane na wydruku po prowadzeniu danych.</p>
+        <p class="p">Rodzaj działania typu usługa lub sprzedaż oraz rodzaj tworzywa są pobierane z bazy danych dla danego numeru dostawy i umieszczane na wydruku.</p>
+      </div>
+      <div class="col-lg-6 mt-4">
+        <img src="img/sortowanie_dostaw.gif" alt="" class="img-fluid">
+      </div>
+      <div class="col-lg-6 mt-4">
+        <h4 class="h4 w-75">Sortowanie dostaw</h4>
+        <p class="p">funkcja została dodana z myślą o nadchodzących ogromnych ilościach dostaw po np. kilku miesiącach sumiennej pracy z aplikacją.</p>
+        <p class="p">Wybieramy to co nas obchodzi i tylko to widzimy. Wykonane dostawy nie pojawią się w wyborze numerów dostaw podczas wprowadzania danych przez pracownika.</p>
+      </div>
+      <div class="col-lg-6 mt-4">
+        <img src="img/zarz_klientami.gif" alt="" class="img-fluid">
+      </div>
+      <div class="col-lg-6 mt-4">
+        <h4 class="h4 w-75">Dodawanie numerów klienta</h4>
+        <p class="p">Z myślą o tym że klienci przychodzą i odchodzą, jako jedyna tabela z bazy danych, która nie ma autoinkrementacji identyfikatora.</p>
+        <p class="p">Proste dodawanie klientów, których można potem dodać do numeru dostawy. Dlaczego jednak cały kreator? Otóż na wydruku na jednej z części wyświetla się id kontrachenta a na drugiej jego pełna nazwa + id.</p>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <h4 class="h4 w-100">Zarządzaj raportami</h4>
+      <div class="col-lg-12">
+        <iframe id="fred" style="" title="Podgląd" src="remmos_app-zarz.dost.pdf" frameborder="0" scrolling="auto" height="500px" width="100%"></iframe>
+      </div>
+      <div class="col-lg-6 mt-4">
+        <h4 class="h4 w-75">Zarządzanie raportami</h4>
+        <p class="p">Czyli najważniejsza opcja pozwalająca kontrolować co się działo przez ostatni czas na produkcji. Swego czasu miałem ogromną zagwostkę jak stworzyć zapytanie if dla sortowania według tego co użytkownik by zaznaczył w konću gdyby miałby to być elseif byłoby 2<sup>8</sup> = 256 zapytań.</p>
+        <p class="p"><code>  if (isset($_POST['raportAdd'])) {</code></p>
+        <p class="p text-muted">
+        //sprawdzanie po konkretnej dacie<br><code>
+        if (isset($_POST['idCheck'])) {<br>
+          &nbsp;$sqlTail .= " AND data = '".$_POST['raportData']."'";<br>
+        } </code></p>
+        <p class="p"><code>$sqlRaport = "SELECT id AS 'id' [...] FROM dane WHERE id >= 0" . $sqlTail .";";</code></p>
+      </div>
+      <div class="col-lg-6 mt-4">
+        <p class="p">Końcowo wpadłem na świetny pomysł żeby nie sprawdzać czy należy włożyć WHERE czy AND, tylko żeby zmusić że wszystko powinno być AND więc użyłem <code>WHERE id >= 0</code> żeby nie spowodować tym większych problemów a wymusić wpisywanie AND.</p>
+        <p class="p">Teraz zaznaczenie dowolnego checkboxu dopisuje do zapytania dodatkowhy AND i wszystko wyświetla się poprawnie a zapytanie staje się dłuższe i bardziej dokładne.</p>
+        <img src="img/pusheen.png" alt="" class="img-fluid w-50">
+      </div>
+      <div class="col-lg-6 mt-4">
+        <img src="img/raporty.gif" alt="" class="img-fluid">
+      </div>
+      <div class="col-lg-6 mt-4">
+        <h4 class="h4 w-75">Wydrukuj to co widzisz</h4>
+        <p class="p">Raporty, raportami. Wyświetlać może je tylko administrator, ale jeśli chcielibyśmy wydrukować tylko dany przedział? Aplikacja to umożliwia.</p>
+        <p class="p">Po kliknięciu w ikonkę papieru obok nagłówka <i>wygenerowany raport</i> tabela, którą stworzyliśmy zostaje wyeksportowana do druku, gdzie łatwo można ją zapisać w formacie .pdf.</p>
+        <p class="p">Wygenerowana tabela z prezentacji po lewej znajduje się niżej.</p>
+      </div>
+      <div class="col-lg-12 mt-4">
+        <iframe id="fred" style="" title="Podgląd" src="remmos_app-zarz.rapo.pdf" frameborder="0" scrolling="auto" height="400px" width="100%"></iframe>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <h2 class="h3 w-75">Na tym kończy się opis aplikacji.</h2>
+      <h3 class="h3 w2-5"><a href="#">Przejdź na górę</a></h3>
+    </div>
+
   </div>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
