@@ -414,7 +414,9 @@ a:hover {
 }
 
 .project-technology-img {
-  width: 25px;
+  width: auto;
+  max-width: 50px;
+  max-height: 25px;
   height: auto;
   filter: grayscale(100);
   margin: 5px 5px;
