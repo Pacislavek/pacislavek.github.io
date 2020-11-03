@@ -42,10 +42,10 @@
     <div class="row">
       <h3 class="h3 w-75 mt-4">Przebieg działania aplikacji:</h3>
 
-      <div class="col-lg-6">
+      <div data-aos="fade-right" class="col-lg-6">
         <img src="img/login.gif" alt="" class="img-fluid">
       </div>
-      <div class="col-lg-6">
+      <div data-aos="fade-right" class="col-lg-6">
         <h4 class="h4 w-75 mt-2">Logowanie</h4>
         <p class="p">Logowanie miało mieć prostą i zrozumiałą dla każdego formę. Twoje imie znajduje się na liście? Wybierz je. Pamiętasz hasło? Wpisz je. Żadnej filozofii.</p>
         <p class="p">Istniał podział na role, użytkownik i administrator. Administrator po zalogowaniu miał dostęp do panelu administracyjnego.</p>
@@ -53,10 +53,10 @@
     </div>
     <div class="row mt-4">
 
-      <div class="col-lg-6">
+      <div data-aos="fade-right" class="col-lg-6">
         <img src="img/app.gif" alt="" class="img-fluid">
       </div>
-      <div class="col-lg-6">
+      <div data-aos="fade-right" class="col-lg-6">
         <h4 class="h4 w-75 mt-2">Działanie aplikacji</h4>
         <p class="p">Aplikacja, podobnie jak logowanie, również była bardzo prosta w obsłudze. Wybierz maszynę na której pracujesz, wybierz czy jest to wejście czy wyjście wprowadź niezbędne dane.</p>
         <p class="p">Z <b>numerem dostawy</b> to trochę dłuższa historia. Aplikacja do pełnego funkcjonowania wymaga kogoś kto będzie na bieżąco z tym co dzieje się na hali produkcyjnej. Wie jakie są dostawy i dla jakich klientów, jedynie kontrolnie zerka czy wszystko się zgadza.</p>
@@ -86,26 +86,26 @@
       <div class="col-lg-12">
         <img src="img/panel_administracyjny_zd.png" alt="" class="img-fluid">
       </div>
-      <div class="col-lg-6 mt-4">
+      <div data-aos="fade-right" class="col-lg-6 mt-4">
         <img src="img/nr_dostawy.gif" alt="" class="img-fluid">
       </div>
-      <div class="col-lg-6 mt-4">
+      <div data-aos="fade-right" class="col-lg-6 mt-4">
         <h4 class="h4 w-75">Dodawanie numerów dostawy</h4>
         <p class="p">Utworzony przeze mnie numer dostawy z prezentacji po lewej stronie to <b>MI20/43/3</b> oznacza on dokładnie to samo co wprowadziłem. Poza usługą/sprzedażą i rodzajem tworzywa, które dopiero są umieszczane na wydruku po prowadzeniu danych.</p>
         <p class="p">Rodzaj działania typu usługa lub sprzedaż oraz rodzaj tworzywa są pobierane z bazy danych dla danego numeru dostawy i umieszczane na wydruku.</p>
       </div>
-      <div class="col-lg-6 mt-4">
+      <div data-aos="fade-right" class="col-lg-6 mt-4">
         <img src="img/sortowanie_dostaw.gif" alt="" class="img-fluid">
       </div>
-      <div class="col-lg-6 mt-4">
+      <div data-aos="fade-right" class="col-lg-6 mt-4">
         <h4 class="h4 w-75">Sortowanie dostaw</h4>
         <p class="p">funkcja została dodana z myślą o nadchodzących ogromnych ilościach dostaw po np. kilku miesiącach sumiennej pracy z aplikacją.</p>
         <p class="p">Wybieramy to co nas obchodzi i tylko to widzimy. Wykonane dostawy nie pojawią się w wyborze numerów dostaw podczas wprowadzania danych przez pracownika.</p>
       </div>
-      <div class="col-lg-6 mt-4">
+      <div data-aos="fade-right" class="col-lg-6 mt-4">
         <img src="img/zarz_klientami.gif" alt="" class="img-fluid">
       </div>
-      <div class="col-lg-6 mt-4">
+      <div data-aos="fade-right" class="col-lg-6 mt-4">
         <h4 class="h4 w-75">Dodawanie numerów klienta</h4>
         <p class="p">Z myślą o tym że klienci przychodzą i odchodzą, jako jedyna tabela z bazy danych, która nie ma autoinkrementacji identyfikatora.</p>
         <p class="p">Proste dodawanie klientów, których można potem dodać do numeru dostawy. Dlaczego jednak cały kreator? Otóż na wydruku na jednej z części wyświetla się id kontrachenta a na drugiej jego pełna nazwa + id.</p>
@@ -117,7 +117,7 @@
       <div class="col-lg-12">
         <iframe id="fred" style="" title="Podgląd" src="remmos_app-zarz.dost.pdf" frameborder="0" scrolling="auto" height="500px" width="100%"></iframe>
       </div>
-      <div class="col-lg-6 mt-4">
+      <div data-aos="fade-down" class="col-lg-6 mt-4">
         <h4 class="h4 w-75">Zarządzanie raportami</h4>
         <p class="p">Czyli najważniejsza opcja pozwalająca kontrolować co się działo przez ostatni czas na produkcji. Swego czasu miałem ogromną zagwostkę jak stworzyć zapytanie if dla sortowania według tego co użytkownik by zaznaczył w konću gdyby miałby to być elseif byłoby 2<sup>8</sup> = 256 zapytań.</p>
         <p class="p"><code>  if (isset($_POST['raportAdd'])) {</code></p>
@@ -128,21 +128,21 @@
         } </code></p>
         <p class="p"><code>$sqlRaport = "SELECT id AS 'id' [...] FROM dane WHERE id >= 0" . $sqlTail .";";</code></p>
       </div>
-      <div class="col-lg-6 mt-4">
+      <div data-aos="fade-down" class="col-lg-6 mt-4">
         <p class="p">Końcowo wpadłem na świetny pomysł żeby nie sprawdzać czy należy włożyć WHERE czy AND, tylko żeby zmusić że wszystko powinno być AND więc użyłem <code>WHERE id >= 0</code> żeby nie spowodować tym większych problemów a wymusić wpisywanie AND.</p>
         <p class="p">Teraz zaznaczenie dowolnego checkboxu dopisuje do zapytania dodatkowhy AND i wszystko wyświetla się poprawnie a zapytanie staje się dłuższe i bardziej dokładne.</p>
         <img src="img/pusheen.png" alt="" class="img-fluid w-50">
       </div>
-      <div class="col-lg-6 mt-4">
+      <div data-aos="fade-right" class="col-lg-6 mt-4">
         <img src="img/raporty.gif" alt="" class="img-fluid">
       </div>
-      <div class="col-lg-6 mt-4">
+      <div data-aos="fade-right" class="col-lg-6 mt-4">
         <h4 class="h4 w-75">Wydrukuj to co widzisz</h4>
         <p class="p">Raporty, raportami. Wyświetlać może je tylko administrator, ale jeśli chcielibyśmy wydrukować tylko dany przedział? Aplikacja to umożliwia.</p>
         <p class="p">Po kliknięciu w ikonkę papieru obok nagłówka <i>wygenerowany raport</i> tabela, którą stworzyliśmy zostaje wyeksportowana do druku, gdzie łatwo można ją zapisać w formacie .pdf.</p>
         <p class="p">Wygenerowana tabela z prezentacji po lewej znajduje się niżej.</p>
       </div>
-      <div class="col-lg-12 mt-4">
+      <div data-aos="fade-right" class="col-lg-12 mt-4">
         <iframe id="fred" style="" title="Podgląd" src="remmos_app-zarz.rapo.pdf" frameborder="0" scrolling="auto" height="400px" width="100%"></iframe>
       </div>
     </div>
