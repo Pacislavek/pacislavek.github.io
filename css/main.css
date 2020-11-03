@@ -386,6 +386,10 @@ a:hover {
   background-image: url(../img/elektromedia-fullwebiste-ss.png);
 }
 
+.project-remmos {
+  background-image: url(../img/remmos_app.png);
+}
+
 .project-undone {
   background-image: url(../img/work-in-progress.png);
 }
