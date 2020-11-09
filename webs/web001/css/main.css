@@ -1,0 +1,620 @@
+/* MAIN SETTINGS */
+:root {
+  --h1-color: #504040;
+  --h2-color: #403030;
+  --p-color: #151515;
+}
+
+*:focus {
+  outline: none;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.h1 {
+  color: var(--h1-color);
+}
+
+.h2 {
+  color: var(--h2-color);
+}
+
+.h3,
+.h4,
+.h5,
+.h5,
+.p {
+  color: var(--p-color);
+}
+
+.m-35 {
+  margin-top: 35px;
+}
+
+/* NAVBAR */
+.navbar-collapse {
+  flex-direction: row-reverse;
+
+}
+
+
+/* HEADER SLIDER */
+#header .carousel-item {
+  height: 75vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* ABOUT US */
+#about {
+  padding-top: 75px;
+  min-height: 100vh;
+}
+
+.title-primary {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.3em;
+}
+
+.desc-primary {
+  color: var(--p-color);
+  font-size: 16px;
+}
+
+.desc-secondary {
+  color: var(--p-color);
+  letter-spacing: 0.9;
+}
+
+.desc-class,
+.blue-text {
+  color: #4f6b9c;
+}
+
+.desc-teammate {
+  color: var(--h1-color);
+}
+
+.team-avatar {
+  max-width: 250px;
+  max-height: 250px;
+}
+
+/* OFFER */
+
+#offer {
+  position: relative;
+  background-color: black;
+  height: 30vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+#offer video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+#offer .container {
+  position: relative;
+  z-index: 2;
+}
+
+#offer .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.card {
+  border: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.icon {
+  max-width: 75px;
+  margin: 25px;
+}
+
+.icon-white {
+  max-width: 75px;
+  height: 100px;
+  margin: 25px;
+  filter: invert(90);
+}
+
+section.pricing {
+  background: #4369b0;
+  background: linear-gradient(to top, #4369b0, #75a1f0);
+  box-shadow: inset 0 7px 9px -7px rgba(0, 0, 0, 0.4);
+}
+
+.pricing .card {
+  border: none;
+  border-radius: 1rem;
+  transition: all 0.2s;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  /* required */
+}
+
+.pricing hr {
+  margin: 1.5rem 0;
+}
+
+.pricing .card-title {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+}
+
+.pricing .card-price {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.pricing .card-price .period {
+  font-size: 0.8rem;
+}
+
+.pricing ul li {
+  margin-bottom: 1rem;
+}
+
+.pricing .text-muted {
+  opacity: 0.7;
+}
+
+.pricing .btn {
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  opacity: 0.7;
+  transition: all 0.2s;
+}
+
+.ribbon {
+  margin: 0;
+  padding: 0;
+  background: orange;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  padding: 0.75rem 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(30%) translateY(0%) rotate(45deg);
+  transform-origin: top left;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.15);
+}
+
+.ribbon:before,
+.ribbon:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  margin: 0 -1px;
+  /* tweak */
+  width: 100%;
+  height: 100%;
+  background: orange;
+}
+
+.ribbon:before {
+  right: 100%;
+}
+
+.ribbon:after {
+  left: 100%;
+}
+
+/* Hover Effects on Card */
+
+@media (min-width: 992px) {
+  .pricing .card:hover {
+    margin-top: -.25rem;
+    margin-bottom: .25rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
+  }
+
+  .pricing .card:hover .btn {
+    opacity: 1;
+  }
+}
+
+.offer-button {
+  border-radius: 38px;
+  border: 2px solid white;
+  background-color: transparent;
+  padding: 15px 43px;
+  color: white;
+  transition: all 0.3s ease-in-out;
+  font-family: 'Poppins', sans-serif;
+}
+
+.offer-button:hover {
+  background-color: whitesmoke;
+  color: #4369b0;
+}
+
+.phone-section {
+  background: #4369b0;
+  background: linear-gradient(to bottom, #4369b0, #75a1f0);
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.phone-section:before {
+  content: '';
+  position: absolute;
+  top: 44;
+  left: 88;
+  width: 43%;
+  height: 100%;
+  background-image: url(../img/geometricShape.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: brightness(0);
+  opacity: 0.16;
+}
+
+.iphone-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.iphone-container:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 2% 11%;
+  width: 78%;
+  height: 96%;
+  background: #4369b0;
+  background: url(../img/iphone-wallpaper.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 30px;
+}
+
+.iphone-content {
+  z-index: 4;
+  position: absolute;
+  margin: 19% 0 3% 0;
+  width: 72%;
+  height: 78%;
+  box-shadow: inset 0 0 1em rgba(0, 0, 0, 0.5);
+}
+
+.iphone {
+  position: relative;
+  width: 80%;
+  z-index: 3;
+  filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.3));
+  max-height: 566px;
+}
+
+.title-iphone {
+  font-family: 'Open Sans', sans-serif;
+  color: whitesmoke;
+}
+
+.time-iphone {
+  text-align: center;
+  color: whitesmoke;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 44px;
+  font-weight: 300;
+  padding: 12px 0;
+  margin-bottom: 22px;
+}
+
+.iphone-popup {
+  display: flex !important;
+  position: relative;
+  flex-wrap: wrap;
+  background-color: rgba(255, 255, 255, 0.86);
+  border-radius: 4px;
+  padding: 7px 11px;
+  filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.2));
+  margin-bottom: 10px;
+}
+
+.iphone-popup .time {
+  position: absolute;
+  top: 4;
+  right: 4;
+  font-size: 12px;
+  color: grey;
+}
+
+.iphone-popup .title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.iphone-popup .desc {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.next-to-phone {
+  background: transparent;
+}
+
+.next-to-phone .card {
+  box-shadow: none;
+}
+
+.button-iphone {
+  display: flex;
+  position: absolute;
+  bottom: 20px;
+  left: 0px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.button-iphone .fas {
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 12px 15px;
+  border-radius: 50%;
+  animation: bounce 2s infinite;
+  cursor: pointer;
+}
+
+@-webkit-keyframes bounce {
+
+  0%,
+  25%,
+  50%,
+  75%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  60% {
+    -webkit-transform: translateY(-12px);
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes bounce {
+
+  0%,
+  25%,
+  50%,
+  75%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  60% {
+    -webkit-transform: translateY(-12px);
+    transform: translateY(-12px);
+  }
+}
+
+.iphone-blocked {
+  padding: 8px 10px;
+}
+
+.iphone-app {
+  width: 100%;
+  height: 100%;
+  background-color: whitesmoke;
+  box-shadow: inset 0 0 1em rgba(0, 0, 0, 0.5);
+}
+
+#offerphone .carousel-item,
+#offerphone .carousel-inner {
+  height: 100%;
+}
+
+.iphone-app .nav-menu {
+  height: 46px;
+  width: 100%;
+  background-color: #36a4f7;
+  background: linear-gradient(to top, #2e98e8, #36a4f7);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16);
+}
+
+.nav-menu a,
+.nav-menu span {
+  color: white;
+
+}
+
+.nav-menu a {
+  font-size: 20px;
+  transition: all 0.2s;
+}
+
+.nav-menu a:focus {
+  transform: scale(0.9);
+}
+
+.app-content {
+  width: 100%;
+  height: 84%;
+  overflow-y: auto;
+}
+
+.app-content::-webkit-scrollbar {
+  width: 0px;
+}
+
+.app-title {
+  font-size: 1.4em;
+  margin-bottom: 0.8rem;
+}
+
+.app-desc {
+  font-size: .95em;
+  text-align: justify;
+}
+
+.app-images-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
+}
+
+.app-img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 5px;
+}
+
+.app-button {
+  border: none;
+  outline: none;
+  padding: 7px 12px;
+  float: right;
+  background-color: transparent;
+}
+
+.app-button .fas {
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+/* KONTAKT */
+
+#contact {
+  position: relative;
+  background-color: #303030;
+  background-image: url(../img/4094-min.jpg);
+  background-size: cover;
+}
+
+#contact:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+}
+
+.contact-information-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: flex-start;
+  flex-direction: column;
+  height: 100%;
+  padding: 40px 0;
+}
+
+.contact-information {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 4px 8px;
+}
+
+.contact-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  color: white;
+  letter-spacing: 1.4;
+}
+
+.contact-desc {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 17px;
+  color: white;
+  letter-spacing: 1;
+}
+
+.contact-icon {
+  width: 30px;
+  height: 30px;
+  align-self: flex-start;
+  margin-right: 18px;
+  filter: invert(100%);
+}
+
+.contact-form {
+  color: white;
+}
+
+@media (max-width: 575.98px) {
+  .pricing .card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 967.98px) {
+  .pricing .card {
+    width: 100%;
+  }
+
+  .phone-section:before {
+    top: 45;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .p {
+    font-size: 18px;
+  }
+}
