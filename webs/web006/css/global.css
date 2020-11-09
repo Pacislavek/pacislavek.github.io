@@ -1,0 +1,28 @@
+:root {
+  --color-primary: #65e0fb;
+  --color-secondary: #5ac9e1;
+  /*COLOR SHADES https://www.color-hex.com/color/65e0fb*/
+
+  --text-black: #202020;
+  --heading-black: #454545;
+
+  --font-primary: 'Roboto', sans-serif;
+  --font-secondary: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #fefefe;
+  color: var(--text-black);
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  font-family: var(--font-secondary);
+}
+
+*:focus {
+  outline: none;
+}
