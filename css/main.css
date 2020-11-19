@@ -546,6 +546,10 @@ a:hover {
   transform: scale(1.1);
 }
 
+.opera-fan {
+  cursor: default;
+}
+
 .contact-email-button {
   background-color: transparent;
   width: 100%;
