@@ -324,6 +324,8 @@ a:hover {
   color: rgba(255, 255, 255, 0.2);
   font-size: 14px;
   transition: all 0.3 ease-in;
+  margin-left: auto !important;
+  padding-top: 3px;
 }
 
 .project-date:hover {
@@ -337,7 +339,17 @@ a:hover {
   font-weight: 400;
   padding-top: 6px;
   display: flex;
-  justify-content: space-between;
+}
+
+.commerce {
+  color: #e0d100;
+  font-size: 22px;
+  opacity: 0.8;
+  transition: all 0.3s linear;
+}
+
+.commerce:hover {
+  opacity: 1;
 }
 
 .project-desc {
@@ -422,6 +434,10 @@ a:hover {
 
 .project-todolist:hover {
   background-image: url(../img/todolist.gif);
+}
+
+.project-jnp {
+  background-image: url(../img/jnp_preview.png);
 }
 
 .project-technologies-title {
