@@ -26,132 +26,170 @@
 
 <body style="background-color: #252525;">
 
+  <span class="prev-btn position-fixed" onclick="window.history.back();"></span>
+
   <div class="container py-5">
     <div class="row">
       <h1 class="h1 w-100"><code class="mr-2">Remmos_app</code>
         <img src="../img/php-logo.svg" alt="" class="project-technology-img">
       </h1>
-      <h4 class="h5 w-75">Aplikacja Remmos została stworzona z myślą o ludziach pracujących na hali produkcyjnej. Ma ona za zadanie ułatwić pracę zarówno pracownikom, jak i osobom wypełniającym faktury, lub różne inne dokumenty związane z produkcją.</h4>
-      <h4 class="h5 w-75 text-muted">Aplikacja została wymyślona przez mojego pracodawcę, właściciela firmy Remmos.</h4>
-      <h4 class="h4 w-75 mt-4">Założenia aplikacji:</h4>
-      <p class="p">Aplikacja musi być bardzo prosta w użytku oraz jest przeznaczona na tablet.<br>Użytkownicy nie tworzą kont, tylko dostają przydzielone z góry loginy i hasła.<br>Aplikacja po wprowadzeniu danych od razu ma wywoływać wydruk.<br>Panel administratora, gdzie będzie można zobaczyć kto kiedy co i gdzie.</p>
-      <h4 class="h4 w-75 mt-4">Znane błędy:</h4>
-      <p class="p">Najdłuższą ilość czasu zajęło mi przygotowanie druku po wprowadzeniu danych. Do drukowania dwóch kopii tabel zawierających dane wykorzystałem bibliotekę jQuery <a href="https://github.com/jasonday/printThis">printThis</a>, która choć trochę ułatwiła mi pracę. Stylowanie wydruku musiałem umieszczać w atrybucie <code>&lt;style&gt;</code> co i tak wychodziło całkiem słabo. Z powodów końcowego wydruku tabeli z danymi, który niezadowalał mojego pracodawcy - prace nad poprawą wydruku jak i dalszymi wdrożeniami do aplikacji zostały zaniechane a aplikacja pozostała w niezmienionej formie, tak jak ją ukończyłem. <a href="print.html">Podgląd wydruku.</a></p>
+      <h4 class="h5 w-75 poppins">Aplikacja Remmos została stworzona z myślą o ludziach pracujących na hali produkcyjnej zakładu pulweryzacyjnego. Ma ona za zadanie ułatwić pracę zarówno pracownikom, jak i osobom wypełniającym faktury lub różne inne dokumenty związane z produkcją.</h4>
+      <h4 class="h5 w-75 text-muted poppins">Aplikacja została wymyślona przez właściciela firmy Remmos.</h4>
+      <h4 class="h4 w-75 mt-4 poppins">Założenia aplikacji:</h4>
+      <p class="p">
+        Aplikacja musi być bardzo prosta w użyciu
+        <br>Użytkownicy nie tworzą kont, tylko dostają przydzielone z góry loginy i hasła.
+        <br>Aplikacja po wprowadzeniu danych do bazy od razu ma wywoływać wydruk.
+        <br><span class="d-block w-75">Panel administratora, gdzie będzie można zobaczyć kto dokonywał wprowadzenia danych, jaka została użyta maszyna oraz waga netto i brutto.</span>
+      </p>
     </div>
 
     <div class="row">
-      <h3 class="h3 w-75 mt-4">Przebieg działania aplikacji:</h3>
+      <h4 class="h4 mt-4 poppins w-100">Opis aplikacji:</h4>
+      <h5 class="h5 poppins w-100 mt-5 mb-4 text-center">Przegląd budowy bazy danych:</h5>
+      <div class="col-lg-6">
+        <img src="../img/remmos_app_db.png" alt="" class="img-fluid shadow">
+      </div>
 
-      <div data-aos="fade-right" class="col-lg-6">
-        <img src="img/login.gif" alt="" class="img-fluid">
+      <div class="col-lg-6">
+        <p class="p">Baza danych była regularnie co jakiś czas zmieniana więc po drodze do finalnej wersji aplikacji pojawiały się błędy przez co kilka rzeczy jest zrobionych nierozsądnie z punktu widzenia planowania.</p>
+        <p class="p">Istnieje 6 tabel zawierających niezbędne dane. Są to:</p>
+        <ul>
+          <li><b>Dane</b> - zawierająca najważniejsze dane o pulweryzacji. Większość z nich jest również widoczna na wydruku.</li>
+          <li><b>Klienci</b> - zawierająca informacje o klientach, czyli w skrócie dla kogo jest dostawa.</li>
+          <li><b>Kolory</b> - zawierająca listę kolorów dostępnych do uzyskania z pulweryzacji.</li>
+          <li><b>nr_dostawy</b> - zawierająca informacje o numerach dostawy, które zawierają konkretne informacje.</li>
+          <li><b>rodzaje_tworzywa</b> - zawierająca listę rodzajów tworzywa dostępnych do uzyskania z pulweryzacji.</li>
+          <li><b>users</b> - zawierająca informacje o użytkownikach.</li>
+        </ul>
       </div>
-      <div data-aos="fade-right" class="col-lg-6">
-        <h4 class="h4 w-75 mt-2">Logowanie</h4>
-        <p class="p">Logowanie miało mieć prostą i zrozumiałą dla każdego formę. Twoje imie znajduje się na liście? Wybierz je. Pamiętasz hasło? Wpisz je. Żadnej filozofii.</p>
-        <p class="p">Istniał podział na role, użytkownik i administrator. Administrator po zalogowaniu miał dostęp do panelu administracyjnego.</p>
+
+      <h5 class="h5 poppins w-100 mt-5 mb-4 text-center">Logowanie:</h5>
+      <div class="col-lg-6">
+        <img src="../img/remmos_app-login.gif" alt="" class="img-fluid shadow">
       </div>
+
+      <div class="col-lg-6">
+        <p class="p">Logowanie jest bardzo proste i intuicyjne. Z pola dostępnych użytkowników należy wybrać swoje konto a następnie wprowadzić do niego hasło.</p>
+        <p class="p">Użytkownicy są podzielni na dwa typy:</p>
+        <ul>
+          <li>admin - posiadający dostęp do panelu administratora</li>
+          <li>user - nieposiadający dostępu do panelu administratora</li>
+        </ul>
+        <p class="p">Każda sekcja jest chroniona przez sprawdzenie autentyfikacji użytkownika. Jeżeli nie jest się zalogowanym, od razu wyrzuca do strony logowania.</p>
+      </div>
+
+      <h5 class="h5 poppins w-100 mt-5 mb-4 text-center">Przegląd działania aplikacji:</h5>
+      <div class="col-lg-6">
+        <img src="../img/remmos_app-app.gif" alt="" class="img-fluid shadow">
+      </div>
+
+      <div class="col-lg-6">
+        <p class="p">Aplikacja działa jak pokaz slajdów z wyborem opcji. Wybieramy maszynę na której pracujemy, potem opcję wejścia/wyjścia, następnie wprowadzamy dane czyli; wagę brutto, wagę palety, kolor, rodzaj przemiału, numer dostawy oraz opcjonalnie uwagi.</p>
+        <p class="p">Zależnie od tego na jakiej maszynie pracujemy oraz czy jest to wejście/wyjście dobierane są nam opcje oraz numery dostaw. Na przykłąd dla maszyny Pallmann dostępne są tylko numery dostaw zaczynające się na PU, a dla wejścia tylko przemiał oraz granulat.</p>
+        <p class="p">Po wciśnięciu przycisku "dodaj do bazy" wprowadzone dane oraz dane maszyny i wejścia/wyjścia zostają dodane do bazy, a niektóre z nich są przekierowane dalej do wydruku.</p>
+      </div>
+
+      <h5 class="h5 poppins w-100 mt-5 mb-4 text-center">Przegląd wydruku aplikacji:</h5>
+      <div class="col-lg-6">
+        <img src="../img/remmos_app-print.png" alt="" class="img-fluid shadow">
+      </div>
+
+      <div class="col-lg-6">
+        <p class="p">Od razu po wprowadzeniu danych mamy do wydrukowania etykietę dotyczącą zamówienia oraz worka. Etykieta jest podzielona na dwie części, część która zostaje w zakładzie oraz drugą część, która wędruje do klienta dlatego różnią się od siebie ilością danych.</p>
+        <p class="p">Na wydruku widnieją dodatkowe opcje pobierane z tabeli <code>nr_dostawy</code> zawierające informacje nadane z góry przez administratora, czyli rodzaj usługi oraz rodzaj tworzywa.</p>
+        <p class="p">Po wydrukowaniu etykiety następuje natychmiastowe wylogowanie, tak aby uniknąć dodawania dostaw z nie swojego konta "jako nie ja".</p>
+      </div>
+
+      <h5 class="h5 poppins w-100 mt-5 mb-4 text-center">Przegląd panelu administratora aplikacji:</h5>
+      <div class="col-lg-6">
+        <img src="../img/remmos_app-admin.png" alt="" class="img-fluid shadow">
+      </div>
+
+      <div class="col-lg-6">
+        <p class="p">Panel administratora w aplikacji został stworzony z myślą o bardzo prostym interfejsie. Funkcje były cały czas dodawane zgodnie z poleceniami zleceniodawcy.</p>
+        <p class="p">Można wyróznić kilka podpunktów czym można się zająć w PA.</p>
+        <ul>
+          <li>Zarządzanie Użytkownikami</li>
+          <li>Zarządzanie Dostawami</li>
+          <ul>
+            <li>Zarządzanie numerami klientów</li>
+            <li>Zarządzanie rodzajem tworzywa</li>
+          </ul>
+          <li>Zarządzanie kolorami</li>
+          <li>Zarządzanie raportami</li>
+          <ul>
+            <li>Sortowanie raportów</li>
+            <li>Drukowanie raportów</li>
+          </ul>
+        </ul>
+      </div>
+
+      <h5 class="h5 poppins w-100 mt-5 mb-4 text-center">Zarządzanie użytkownikami</h5>
+      <div class="col-lg-6">
+        <img src="../img/remmos_app-admin-user.png" alt="" class="img-fluid shadow">
+      </div>
+
+      <div class="col-lg-6">
+        <p class="p">Panel pozwala na dodawanie użytkowników o określonych permisjach.</p>
+        <ul>
+          <li>admin - który ma dostęp do panelu administratora i może zarządzać wszystkim.</li>
+          <li>user - który może tylko dodawać raporty</li>
+        </ul>
+        <p class="p">Użytkowników można usunąć. Wykorzystałem do tego osobny plik, który sprawdza linijkę przekazaną przez GET. Na początku sprawdza jednak czy jesteśmy zalogowani na admina, jeśli nie przekierowuje do logowania.</p>
+      </div>
+
+      <h5 class="h5 poppins w-100 mt-5 mb-4 text-center">Zarządzanie dostawami</h5>
+      <div class="col-lg-6">
+        <img src="../img/remmos_app-admin-delivery.png" alt="" class="img-fluid shadow">
+      </div>
+
+      <div class="col-lg-6">
+        <p class="p">Sekcja zarządzania dostawami. Zawiera dodawanie dostaw, które się dzieli jeszcze na dodawanie klientów i rodzaji tworzyw.</p>
+        <p class="p">Poniżej sortowanie według kryteriów: wykonane, niewykonane, wysłane, niewysłane, MI, PU, RE, AG - które są odpowiednikami mielenia, kruszenia itd.</p>
+        <p class="p">Dostawy, które są zaznaczone jako wykonane nie będą się pojawiać w opcji dodawania worka. Opcja wysłane jest tylko wizualnym dodatkiem dla osoby zajmującej się dostawami.</p>
+      </div>
+
+      <h5 class="h5 poppins w-100 mt-5 mb-4 text-center">Zarządzanie kolorami</h5>
+      <div class="col-lg-6">
+        <img src="../img/remmos_app-admin-colors.png" alt="" class="img-fluid shadow">
+      </div>
+
+      <div class="col-lg-6">
+        <p class="p">Sekcja zarządzania kolorami, bardzo prosta sekcja. Wprowadzamy nazwę koloru, który chcemy dodać do listy wyświetlającej się w 3' sekcji dodawania zamówienia.</p>
+        <p class="p">Każdy kolor możemy usunąć na wypadek, gdyby firma już nie zajmowała się produkcją granulatu o danym kolorze.</p>
+      </div>
+
+      <h5 class="h5 poppins w-100 mt-5 mb-4 text-center">Zarządzanie raportami</h5>
+      <div class="col-lg-6">
+        <img src="../img/remmos_app-admin-raport.png" alt="" class="img-fluid shadow">
+      </div>
+
+      <div class="col-lg-6">
+        <p class="p">Duża sekcja zarządzania raportami. Najpierw wybieramy sortowanie jakie dokładnie wpisy nas interesują. W przypadku jeżeli nie wybierzemy żadnej z opcji pokażą się wszystkie raporty.</p>
+        <p class="p">Raporty zawierają informacje podawane podczas wprowadzania nowego zamówienia.</p>
+      </div>
+
+      <div class="col-lg-12 my-5">
+        <iframe id="fred" style="" title="Podgląd" src="remmos_app-zarz.rapo2.pdf" frameborder="0" scrolling="auto" height="500px" width="100%"></iframe>
+      </div>
+
+      <div class="col-lg-6">
+        <img src="../img/remmos_app-raprots.gif" alt="" class="img-fluid shadow">
+      </div>
+
+      <div class="col-lg-6">
+        <p class="p">Możliwość wydrukowania ścisłego raportu. Po kliknięciu przycisku drukowania, wyskoczy systemowe okno drukowania.</p>
+        <iframe id="fredd" style="" title="Podgląd" src="remmos_app-print.pdf" frameborder="0" scrolling="auto" height="272px" width="100%"></iframe>
+      </div>
+
+      <h5 class="h5 poppins w-100 mt-5 mb-4 text-center">Na tym kończy się opis aplikacji. <a href="#">Przejdź do góry.</a></h5>
+
+      <div class="col-lg-12 text-center">
+      <img src="../remmos_app/img/pusheen.png" width="200px" alt="">
+      </div>
+
     </div>
-    <div class="row mt-4">
-
-      <div data-aos="fade-right" class="col-lg-6">
-        <img src="img/app.gif" alt="" class="img-fluid">
-      </div>
-      <div data-aos="fade-right" class="col-lg-6">
-        <h4 class="h4 w-75 mt-2">Działanie aplikacji</h4>
-        <p class="p">Aplikacja, podobnie jak logowanie, również była bardzo prosta w obsłudze. Wybierz maszynę na której pracujesz, wybierz czy jest to wejście czy wyjście wprowadź niezbędne dane.</p>
-        <p class="p">Z <b>numerem dostawy</b> to trochę dłuższa historia. Aplikacja do pełnego funkcjonowania wymaga kogoś kto będzie na bieżąco z tym co dzieje się na hali produkcyjnej. Wie jakie są dostawy i dla jakich klientów, jedynie kontrolnie zerka czy wszystko się zgadza.</p>
-        <p class="p">Po wprowadzeniu danych wyskakuje okno wydruku wprowadzonych danych (<a href="print.html">podgląd wydruku</a>) i następuje automatyczne wylogowanie.</p>
-      </div>
-    </div>
-
-    <div class="row mt-5">
-      <h3 class="h3 w-100">Panel administracyjny</h3>
-      <h4 class="h4 w-100">Zarządzaj użytkownikami</h4>
-      <div class="col-lg-12">
-        <img src="img/panel_administracyjny.png" alt="" class="img-fluid">
-      </div>
-      <div class="col-lg-6 mt-4">
-        <h4 class="h4 w-75">Pierwsze spotkanie z panelem</h4>
-        <p class="p">Panel administracyjny nie ma już przeznaczonego interfejsu na tablet/telefon ale mimo to wciąż jest responsywny na tyle by prawidłowo się wyświetlać od telefonu do komputera.</p>
-        <p class="p">Panel został zbudowany z myślą o trzech kategoriach: użytkownicy, dostawy i raporty. Każdy z działów ma swoje funkcje a menu jest bardzo proste i intuicyjne.</p>
-      </div>
-      <div class="col-lg-6 mt-4">
-        <h4 class="h4 w-75">Zarządzanie użytkownikami</h4>
-        <p class="p">Tworzenie kont użytkowników, bo to jest ważny element każdej aplikacji. W tej, można to robić za pomocą prostego formularza pod menu. Permisje działają w systemie zero-jedynkowym czyli <br>0 - nie mam praw,<br>1 - mam wszystkie prawa.</p>
-      </div>
-    </div>
-
-    <div class="row mt-4">
-      <h4 class="h4 w-100">Zarządzaj Dostawami</h4>
-      <div class="col-lg-12">
-        <img src="img/panel_administracyjny_zd.png" alt="" class="img-fluid">
-      </div>
-      <div data-aos="fade-right" class="col-lg-6 mt-4">
-        <img src="img/nr_dostawy.gif" alt="" class="img-fluid">
-      </div>
-      <div data-aos="fade-right" class="col-lg-6 mt-4">
-        <h4 class="h4 w-75">Dodawanie numerów dostawy</h4>
-        <p class="p">Utworzony przeze mnie numer dostawy z prezentacji po lewej stronie to <b>MI20/43/3</b> oznacza on dokładnie to samo co wprowadziłem. Poza usługą/sprzedażą i rodzajem tworzywa, które dopiero są umieszczane na wydruku po prowadzeniu danych.</p>
-        <p class="p">Rodzaj działania typu usługa lub sprzedaż oraz rodzaj tworzywa są pobierane z bazy danych dla danego numeru dostawy i umieszczane na wydruku.</p>
-      </div>
-      <div data-aos="fade-right" class="col-lg-6 mt-4">
-        <img src="img/sortowanie_dostaw.gif" alt="" class="img-fluid">
-      </div>
-      <div data-aos="fade-right" class="col-lg-6 mt-4">
-        <h4 class="h4 w-75">Sortowanie dostaw</h4>
-        <p class="p">funkcja została dodana z myślą o nadchodzących ogromnych ilościach dostaw po np. kilku miesiącach sumiennej pracy z aplikacją.</p>
-        <p class="p">Wybieramy to co nas obchodzi i tylko to widzimy. Wykonane dostawy nie pojawią się w wyborze numerów dostaw podczas wprowadzania danych przez pracownika.</p>
-      </div>
-      <div data-aos="fade-right" class="col-lg-6 mt-4">
-        <img src="img/zarz_klientami.gif" alt="" class="img-fluid">
-      </div>
-      <div data-aos="fade-right" class="col-lg-6 mt-4">
-        <h4 class="h4 w-75">Dodawanie numerów klienta</h4>
-        <p class="p">Z myślą o tym że klienci przychodzą i odchodzą, jako jedyna tabela z bazy danych, która nie ma autoinkrementacji identyfikatora.</p>
-        <p class="p">Proste dodawanie klientów, których można potem dodać do numeru dostawy. Dlaczego jednak cały kreator? Otóż na wydruku na jednej z części wyświetla się id kontrachenta a na drugiej jego pełna nazwa + id.</p>
-      </div>
-    </div>
-
-    <div class="row mt-5">
-      <h4 class="h4 w-100">Zarządzaj raportami</h4>
-      <div class="col-lg-12">
-        <iframe id="fred" style="" title="Podgląd" src="remmos_app-zarz.dost.pdf" frameborder="0" scrolling="auto" height="500px" width="100%"></iframe>
-      </div>
-      <div data-aos="fade-down" class="col-lg-6 mt-4">
-        <h4 class="h4 w-75">Zarządzanie raportami</h4>
-        <p class="p">Czyli najważniejsza opcja pozwalająca kontrolować co się działo przez ostatni czas na produkcji. Swego czasu miałem ogromną zagwostkę jak stworzyć zapytanie if dla sortowania według tego co użytkownik by zaznaczył w konću gdyby miałby to być elseif byłoby 2<sup>8</sup> = 256 zapytań.</p>
-        <p class="p"><code>  if (isset($_POST['raportAdd'])) {</code></p>
-        <p class="p text-muted">
-        //sprawdzanie po konkretnej dacie<br><code>
-        if (isset($_POST['idCheck'])) {<br>
-          &nbsp;$sqlTail .= " AND data = '".$_POST['raportData']."'";<br>
-        } </code></p>
-        <p class="p"><code>$sqlRaport = "SELECT id AS 'id' [...] FROM dane WHERE id >= 0" . $sqlTail .";";</code></p>
-      </div>
-      <div data-aos="fade-down" class="col-lg-6 mt-4">
-        <p class="p">Końcowo wpadłem na świetny pomysł żeby nie sprawdzać czy należy włożyć WHERE czy AND, tylko żeby zmusić że wszystko powinno być AND więc użyłem <code>WHERE id >= 0</code> żeby nie spowodować tym większych problemów a wymusić wpisywanie AND.</p>
-        <p class="p">Teraz zaznaczenie dowolnego checkboxu dopisuje do zapytania dodatkowhy AND i wszystko wyświetla się poprawnie a zapytanie staje się dłuższe i bardziej dokładne.</p>
-        <img src="img/pusheen.png" alt="" class="img-fluid w-50">
-      </div>
-      <div data-aos="fade-right" class="col-lg-6 mt-4">
-        <img src="img/raporty.gif" alt="" class="img-fluid">
-      </div>
-      <div data-aos="fade-right" class="col-lg-6 mt-4">
-        <h4 class="h4 w-75">Wydrukuj to co widzisz</h4>
-        <p class="p">Raporty, raportami. Wyświetlać może je tylko administrator, ale jeśli chcielibyśmy wydrukować tylko dany przedział? Aplikacja to umożliwia.</p>
-        <p class="p">Po kliknięciu w ikonkę papieru obok nagłówka <i>wygenerowany raport</i> tabela, którą stworzyliśmy zostaje wyeksportowana do druku, gdzie łatwo można ją zapisać w formacie .pdf.</p>
-        <p class="p">Wygenerowana tabela z prezentacji po lewej znajduje się niżej.</p>
-      </div>
-      <div data-aos="fade-right" class="col-lg-12 mt-4">
-        <iframe id="fred" style="" title="Podgląd" src="remmos_app-zarz.rapo.pdf" frameborder="0" scrolling="auto" height="400px" width="100%"></iframe>
-      </div>
-    </div>
-
-    <div class="row mt-5">
-      <h2 class="h3 w-75">Na tym kończy się opis aplikacji.</h2>
-      <h3 class="h3 w2-5"><a href="#">Przejdź na górę</a></h3>
-    </div>
-
   </div>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
